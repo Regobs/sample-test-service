@@ -1,0 +1,24 @@
+name: deploy sample-test-service to stage application eks
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build, Push, and Notify
+    uses: Vance-Club/shared-lib/.github/workflows/build.yaml@main
+    with:
+      service_name:        sample-test-service
+      organization:        vance-core
+      environment:         stage
+      index:               "01"
+      aws_region:          ap-south-1
+      language:            golang
+      go_version:          "1.23"
+      golang_binary_name:  app
+      golang_build_path:   ./cmd
+      dockerfile_path:     Dockerfile
+    secrets: inherit
