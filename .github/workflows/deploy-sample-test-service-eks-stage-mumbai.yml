@@ -19,6 +19,6 @@ jobs:
       language:            golang
       go_version:          "1.23"
       golang_binary_name:  app
-      golang_build_path:   ./cmd
+      golang_build_path:   ./hjgjghjgjhgjh
       dockerfile_path:     Dockerfile
     secrets: inherit
